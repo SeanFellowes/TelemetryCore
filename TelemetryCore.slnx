@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="TelemetryCore.Contracts/TelemetryCore.Contracts.csproj" />
+  <Project Path="TelemetryCore.DemoWeb/TelemetryCore.DemoWeb.csproj" />
+</Solution>

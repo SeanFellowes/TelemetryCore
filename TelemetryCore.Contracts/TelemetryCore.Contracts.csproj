@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net472;netstandard2.0;net6.0;net8.0</TargetFrameworks>
+    <LangVersion>9.0</LangVersion>
+    <!-- Generate XML docs for IntelliSense and include them in the NuGet package -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- NuGet package metadata -->
+    <IsPackable>true</IsPackable>
+    <PackageId>TelemetryCore</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Sean Fellowes</Authors>
+    <Company></Company>
+    <Description>Contracts and helpers for emitting monitoring telemetry (health, gauges, counters) to Prometheus/Grafana.</Description>
+    <PackageTags>monitoring;prometheus;grafana;metrics;heartbeat</PackageTags>
+    <RepositoryUrl>https://github.com/SeanFellowes/TelemetryCore</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <!-- README and License inside the package root -->
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <!-- Icon used by NuGet -->
+    <PackageIcon>icon.png</PackageIcon>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Deterministic>true</Deterministic>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <!-- Set to true if you want packing on build locally -->
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>TelemetryCore.Contracts</Title>
+  </PropertyGroup>
+
+  <!-- Dependencies for specific target frameworks -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472' OR '$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <!-- Include root README, LICENSE and icon.png in the package root -->
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="/" />
+    <None Include="..\LICENSE" Pack="true" PackagePath="/" />
+    <None Include="..\icon.png" Pack="true" PackagePath="/" Condition="Exists('..\icon.png')" />
+  </ItemGroup>
+
+</Project>
