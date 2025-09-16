@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/TelemetryCore.Contracts/.vs
+/.vs
+/TelemetryCore.Contracts/bin/Debug
+/TelemetryCore.Contracts/obj
+/TelemetryCore.DemoWeb/bin/Debug/net8.0
+/TelemetryCore.DemoWeb/obj
