@@ -8,3 +8,5 @@
 /TelemetryCore.Contracts/obj
 /TelemetryCore.DemoWeb/bin/Debug/net8.0
 /TelemetryCore.DemoWeb/obj
+/TelemetryCore.Contracts/bin/Release
+/TelemetryCore.DemoWeb/bin/Release/net8.0
