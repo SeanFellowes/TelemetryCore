@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net472;netstandard2.0;net6.0;net8.0</TargetFrameworks>
@@ -20,6 +20,7 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <!-- README and License inside the package root -->
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>See RELEASE_NOTES.md in the package for detailed changes.</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <!-- Icon used by NuGet -->
     <PackageIcon>icon.png</PackageIcon>
@@ -41,7 +42,9 @@
   <ItemGroup>
     <None Include="..\README.md" Pack="true" PackagePath="/" />
     <None Include="..\LICENSE" Pack="true" PackagePath="/" />
+    <None Include="..\RELEASE_NOTES.md" Pack="true" PackagePath="/" />
     <None Include="..\icon.png" Pack="true" PackagePath="/" Condition="Exists('..\icon.png')" />
   </ItemGroup>
 
 </Project>
+

@@ -1,12 +1,55 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+# Build artifacts
+bin/
+[Bb]in/
+obj/
+[Oo]bj/
+Bon/
+[Bb]on/
+**/bin/
+**/[Bb]in/
+**/obj/
+**/[Oo]bj/
+**/Bon/
+**/[Bb]on/
 
-/TelemetryCore.Contracts/.vs
-/.vs
-/TelemetryCore.Contracts/bin/Debug
-/TelemetryCore.Contracts/obj
-/TelemetryCore.DemoWeb/bin/Debug/net8.0
-/TelemetryCore.DemoWeb/obj
-/TelemetryCore.Contracts/bin/Release
-/TelemetryCore.DemoWeb/bin/Release/net8.0
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Dotnet compiler outputs
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+TestResults/
+[Aa]pp_Data/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+
+# Build logs
+*.cache
+*.log
+*.tlog
+*.trx
+
+# User-specific
+*.RSuser
+*.vsp
+*.vspx
+*.sap
+*.opendb
+*.pdb
+*.dbmdl
+
+# Others
+.vscode/
+.idea/
+*.sln.iml

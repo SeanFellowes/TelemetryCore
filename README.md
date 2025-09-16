@@ -1,11 +1,11 @@
-# TelemetryCore.Contracts ????
+# TelemetryCore.Contracts 📡📊
 
 Contracts and helpers for emitting consistent monitoring telemetry from systems to Prometheus/Grafana.
 
-- ?? NuGet-friendly multi-target package
-- ?? Consistent envelope: identity + health + flexible Gauges/Counters/Tags
-- ?? JSON facade: System.Text.Json on modern TFMs, Newtonsoft.Json for legacy
-- ?? Demo web app included (net8) exposing /healthz and /metrics
+- 📦 NuGet-friendly multi-target package
+- ✉️ Consistent envelope: identity + health + flexible Gauges/Counters/Tags
+- 🧾 JSON facade: System.Text.Json on modern TFMs, Newtonsoft.Json for legacy
+- 🖥️ Demo web app included (net8) exposing /healthz and /metrics
 
 ## What is this?
 
@@ -17,7 +17,7 @@ A tiny, transport-agnostic contract and helpers so multiple bespoke monitors emi
 
 Targets: net472, netstandard2.0, net6.0, net8.0.
 
-## Quick start ?
+## Quick start 🚀
 
 ```csharp
 var now = DateTime.UtcNow;
@@ -42,16 +42,16 @@ var json = TelemetryCore.Contracts.StatsSerializer.ToJson(e);
 var text = TelemetryCore.Contracts.PrometheusWriter.Write(new[] { e });
 ```
 
-## Prometheus exposition ??
+## Prometheus exposition 📈
 
 - Content-Type: `text/plain; version=0.0.4; charset=utf-8`
-- Labels on every sample: `system`, `env`, `instance` (empty ? `default`), `host`, `version`
+- Labels on every sample: `system`, `env`, `instance` (empty ➡️ `default`), `host`, `version`
 - Known metrics: `system_health_status` (gauge), `heartbeat_age_seconds` (gauge, derived from `Utc`)
 - Naming rules: counters end with `_total` (use `rate()` / `increase()`), units use `_seconds`, `_bytes`
-- Generic names are prefixed if you don�t follow rules: gauges ? `generic_gauge_*`, counters ? `generic_counter_*_total`
+- Generic names are prefixed if you don't follow rules: gauges ➡️ `generic_gauge_*`, counters ➡️ `generic_counter_*_total`
 - Metric/label values are escaped per Prometheus text format spec
 
-### Minimal HTTP exposure examples ??
+### Minimal HTTP exposure examples 🌐
 
 - net472: host with `HttpListener` and write `PrometheusWriter.Write(...)` to `/metrics`
 - net6/8: host with Kestrel (Minimal API) and return text with the content type above
@@ -60,30 +60,30 @@ A ready-to-run demo site is included:
 - Project: `TelemetryCore.DemoWeb` (net8.0)
 - Endpoints: `/healthz` and `/metrics` on port 9000
 
-## NuGet package ??
+## NuGet package 📦
 
 - Multi-targets: net472, netstandard2.0, net6.0, net8.0
 - Serializer: Newtonsoft.Json for net472/netstandard2.0; System.Text.Json for net6/net8
 - XML docs included for IntelliSense
 - Package readme, license, and icon are included
 
-## Versioning and compatibility ??
+## Versioning and compatibility 🔄
 
 - Schema version is additive (see `SchemaVersion` in `StatsEnvelopeV1`)
 - Consumers should tolerate unknown fields for forward compatibility
 
-## Contributing ??
+## Contributing 🤝
 
 Issues and PRs are welcome. Keep the envelope stable and additive. For new metrics:
 - Prefer snake_case
 - Units in names (`_seconds`, `_bytes`)
 - Counters end with `_total`
 
-## License ??
+## License ⚖️
 
-MIT License � see LICENSE in the package/repo.
+MIT License ➡️ see LICENSE in the package/repo.
 
-## Attribution ??
+## Attribution 🙌
 
 - Author: Sean Fellowes (https://github.com/SeanFellowes)
-- Assisted by: GPT?5 via GitHub Copilot
+- Assisted by: GPT-5 via GitHub Copilot
